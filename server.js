@@ -22,6 +22,10 @@ const db = mysql.createPool({
 });
 
 // Register endpoint
+app.get('/', async (req, res) => {
+  console.log("Server running.....")
+});
+
 app.post('/register', async (req, res) => {
   try {
     const { name, email, password } = req.body;
