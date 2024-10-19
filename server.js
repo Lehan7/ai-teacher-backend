@@ -11,7 +11,7 @@ const port = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors(
-  { origin: 'https://englishteacher-seven.vercel.app', optionsSuccessStatus: 200 }
+  { origin: '*', optionsSuccessStatus: 200 }
 ));
 
 
