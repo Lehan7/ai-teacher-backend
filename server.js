@@ -10,7 +10,12 @@ const app = express();
 const port = process.env.PORT || 5001;
 
 // Middleware
-app.use(cors());
+app.use(cors(
+  { origin: 'https://englishteacher-seven.vercel.app', optionsSuccessStatus: 200 }
+));
+
+
+
 app.use(bodyParser.json());
 
 // MySQL connection pool
@@ -23,8 +28,7 @@ const db = mysql.createPool({
 
 // Register endpoint
 app.get('/', async (req, res) => {
-  console.log("Server running.....")
-  res.status(200).json({ message: 'Server running' });
+  console.log("Server runn")
 });
 
 app.post('/register', async (req, res) => {
